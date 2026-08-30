@@ -9,6 +9,7 @@ import { TrustSection } from '@/components/pipull/trust-section'
 import { InsightsFeed } from '@/components/pipull/insights-feed'
 import { Footer } from '@/components/pipull/footer'
 import { BookingTray, type BookingItem } from '@/components/pipull/booking-tray'
+import { PanicButton } from '@/components/pipull/panic-button'
 import type { Gig, Student } from '@/lib/pipull-data'
 
 export default function Page() {
@@ -71,6 +72,9 @@ export default function Page() {
         <InsightsFeed />
       </main>
       <Footer />
+      <div className="fixed bottom-4 left-4 z-40 sm:bottom-6 sm:left-6">
+        <PanicButton />
+      </div>
       <BookingTray
         open={trayOpen}
         items={tray}

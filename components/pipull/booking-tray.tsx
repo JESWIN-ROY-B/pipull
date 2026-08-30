@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   X,
   ShieldCheck,
@@ -31,6 +31,17 @@ export function BookingTray({
   onClose: () => void
   onRemove: (id: string) => void
 }) {
+  const [paymentState, setPaymentState] = useState<'idle' | 'pending' | 'success' | 'error'>('idle')
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    closeButtonRef.current?.focus()
+    return () => { document.body.style.overflow = previousOverflow }
+  }, [open])
+
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') onClose()
@@ -71,6 +82,7 @@ export function BookingTray({
             </p>
           </div>
           <button
+            ref={closeButtonRef}
             type="button"
             onClick={onClose}
             className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
@@ -162,11 +174,26 @@ export function BookingTray({
               Funds held in escrow until each gig is marked complete.
             </div>
 
+            {paymentState === 'success' && (
+              <p role="status" className="mt-3 rounded-lg bg-verified/10 px-3 py-2 text-sm font-medium text-verified">
+                Booking request created. Your funds stay protected until completion.
+              </p>
+            )}
+            {paymentState === 'error' && (
+              <p role="alert" className="mt-3 rounded-lg bg-destructive/10 px-3 py-2 text-sm font-medium text-destructive">
+                Secure checkout is not connected in this MVP. No charge was made.
+              </p>
+            )}
             <button
               type="button"
-              className="mt-3 w-full rounded-xl bg-brand px-4 py-3.5 text-sm font-semibold text-brand-foreground transition-transform hover:-translate-y-0.5"
+              disabled={paymentState === 'pending' || paymentState === 'success'}
+              onClick={() => {
+                setPaymentState('pending')
+                window.setTimeout(() => setPaymentState('error'), 650)
+              }}
+              className="mt-3 min-h-12 w-full rounded-xl bg-brand px-4 py-3.5 text-sm font-semibold text-brand-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
             >
-              Confirm &amp; Pay Securely
+              {paymentState === 'pending' ? 'Preparing secure checkout…' : paymentState === 'success' ? 'Booking created' : 'Confirm & Pay Securely'}
             </button>
           </div>
         )}
