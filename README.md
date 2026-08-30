@@ -31,7 +31,7 @@ Traditional blue-collar job boards suffer from **cold-start emptiness**, **marke
 
 Pipul engineered specific technical and UX guardrails to solve these friction points:
 
-* **Zero Cold-Start (25 Pre-Seeded Trades):** Pre-loaded with 25 active worker profiles and 25 matching job listings across localized Indian market rates (₹120–₹450/hr), spanning plumbers, smart lock installers, solar technicians, and home chefs.
+* **Zero Cold-Start (25 Pre-Seeded Trades):** Pre-loaded with 25 active worker profiles and 25 matching job listings across , spanning plumbers, smart lock installers, solar technicians, and home chefs.
 * **Search-First Posting Gate:** Users cannot create a new job or availability post without passing through the semantic search engine first. Manual posting unlocks strictly as a last resort if zero suitable matches exist.
 * **3-Step Conversion Funnel:** Onboarding is restricted to `OTP Auth → Role Selection → Location & Core Trade` to maximize user conversion and retention.
 * **Smart Settlement & Chat Routing:** Offers accepted without price variance trigger immediate contact release. If terms differ, a job-contextual in-app chat opens automatically for real-time negotiation.
@@ -48,7 +48,7 @@ Pipul engineered specific technical and UX guardrails to solve these friction po
 Replaces rigid dropdown filters with natural language vector/keyword comparison across worker bios, trade tags, and location parameters—sorting candidate cards automatically by **Match Percentage**.
 
 ### 3. Transparent Checkout & Commission Pipeline
-Integrated payment breakdown displaying base service rates alongside a transparent **3.5% platform transaction fee** prior to payment confirmation.
+Integrated payment breakdown displaying base service rates alongside a transparent **8% platform transaction fee** prior to payment confirmation.
 
 ---
 
@@ -58,7 +58,6 @@ Integrated payment breakdown displaying base service rates alongside a transpare
 * **Language:** TypeScript
 * **Styling:** Tailwind CSS, Lucide Icons
 * **State & Data Handling:** React Context / Localized State, Seeded Mock DB (`seedData.ts`)
-* **Formatting:** Native `Intl.NumberFormat` for localized Indian Rupee (₹) currency rendering
 * **Deployment:** Vercel
 
 ---
