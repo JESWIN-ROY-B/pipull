@@ -2,7 +2,7 @@
 
 ---
 
-#  Pipul — AI-Powered Blue-Collar Marketplace
+#  Pipull — AI-Powered Blue-Collar Marketplace
 
 > A hyper-efficient, low-friction labor marketplace bridging unorganized trade workers and recruiters in urban India. Built with role-based workflows, semantic match scoring, localized INR pricing, and friction-optimized UX.
 
