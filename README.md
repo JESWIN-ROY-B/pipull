@@ -1,4 +1,4 @@
-# 🛠️ Pipul — AI-Powered Blue-Collar Marketplace
+#  Pipul — AI-Powered Blue-Collar Marketplace
 
 > A hyper-efficient, low-friction labor marketplace bridging unorganized trade workers and recruiters in urban India. Built with role-based workflows, semantic match scoring, and friction-optimized UX.
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 🚀 Live Demo & One-Click Test Accounts
+##  Live Demo & One-Click Test Accounts
 
 Evaluators can test role-specific dashboards instantly using pre-configured accounts:
 
@@ -20,7 +20,7 @@ Evaluators can test role-specific dashboards instantly using pre-configured acco
 
 ---
 
-## 💡 The Problem & Architecture Decisions
+## The Problem & Architecture Decisions
 
 Traditional blue-collar job boards suffer from three major points of friction: **cold-start emptiness**, **marketplace clutter from duplicate job posts**, and **high drop-off rates during complex onboarding**.
 
@@ -33,7 +33,7 @@ Pipul engineered specific technical and UX guardrails to solve these:
 
 ---
 
-## ⚙️ Core Technical Features
+##  Core Technical Features
 
 ### 1. Role-Based Dashboards
 * **Recruiter View:** Profile & Business Details, Active Requests & Applicant Tracking, In-Demand Skills & Market Rates, City Overview & Labor Density.
@@ -47,7 +47,7 @@ Integrated payment breakdown displaying base service rates alongside a transpare
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS, Lucide Icons
 * **State & Data Handling:** React Context / Zustand, Seeded Mock DB (`seedData.ts`)
@@ -55,7 +55,7 @@ Integrated payment breakdown displaying base service rates alongside a transpare
 
 ---
 
-## ⚡ Quickstart
+##  Quickstart
 
 ```bash
 # Clone the repository
@@ -67,5 +67,13 @@ cd pipul-marketplace
 # Install dependencies
 npm install
 
+
+
+
+Developed by
+JESWIN ROY BANDELA          -   Frontend & Data Architect
+ANIRUDH KARTHIK JUJJARE     -   Product & AI Lead — Ideation, Prompt Engineer, AI Agent Integration & Technical Direction
+ESWAR SAI NAGARAGANTI       -   Prompt Quality & Repository Reviewer - Evaluated team prompt outputs, provided structural optimization feedback
+COLLECTIVELY KNOWN AS THE "AVENGERZ"
 # Run local development server
 npm run dev
