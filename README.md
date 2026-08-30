@@ -4,7 +4,7 @@
 
 #  Pipull — AI-Powered Blue-Collar Marketplace
 
-> A hyper-efficient, low-friction labor marketplace bridging unorganized trade workers and recruiters in urban India. Built with role-based workflows, semantic match scoring, localized INR pricing, and friction-optimized UX.
+> A hyper-efficient, low-friction labor marketplace bridging unorganized trade workers and recruiters in urban India. Built with role-based workflows, semantic match scoring and friction-optimized UX.
 
 ![Live Deployment](https://img.shields.io/badge/Demo-https%3A%2F%2Fpipull--21.vercel.app-brightgreen?style=flat-square)
 ![Stage](https://img.shields.io/badge/Stage-MVP%20Ready-blue?style=flat-square)
