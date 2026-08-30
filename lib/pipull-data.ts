@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
+import { preSeededWorkers, preSeededJobOffers } from './seedData'
 import {
   Palette,
   GraduationCap,
@@ -38,7 +39,7 @@ export type Student = {
   tagline: string
 }
 
-export const students: Student[] = [
+const legacyStudents: Student[] = [
   {
     id: 's1',
     name: 'Alex Rivera',
@@ -119,7 +120,7 @@ export type Gig = {
   inclusions: string[]
 }
 
-export const gigs: Gig[] = [
+const legacyGigs: Gig[] = [
   {
     id: 'g1',
     tab: 'popular',
@@ -235,6 +236,39 @@ export const gigs: Gig[] = [
     ],
   },
 ]
+
+// Canonical 25-trade seed data powers the marketplace while preserving the MVP card contracts.
+export const students: Student[] = preSeededWorkers.map((worker, index) => ({
+  id: worker.id,
+  name: worker.name,
+  major: worker.trade,
+  gradYear: 'Verified trade pro',
+  verified: worker.verificationStatus === 'Verified',
+  avatarColor: ['#2563eb', '#10b981', '#0f172a'][index % 3],
+  primarySkill: worker.trade,
+  endorsements: worker.completedJobs,
+  secondarySkills: worker.skills.slice(0, 2),
+  rating: worker.rating,
+  completedGigs: worker.completedJobs,
+  portfolio: '/pipull/coding.png',
+  tagline: worker.bio,
+}))
+
+export const gigs: Gig[] = preSeededJobOffers.map((job, index) => ({
+  id: job.id,
+  tab: index % 3 === 0 ? 'express' : index % 3 === 1 ? 'academic' : 'popular',
+  title: job.title,
+  provider: job.recruiterName,
+  providerSkill: job.trade,
+  avatarColor: ['#2563eb', '#10b981', '#0f172a'][index % 3],
+  verified: true,
+  turnaround: job.rateType === 'Hourly' ? 'Hourly booking' : 'Local trade offer',
+  price: job.offeredRate,
+  rating: 4.8,
+  reviews: 25 + index,
+  image: '/pipull/coding.png',
+  inclusions: job.requiredSkills,
+}))
 
 export const gigTabs: { id: GigTab; label: string }[] = [
   { id: 'popular', label: 'Popular Gigs' },
