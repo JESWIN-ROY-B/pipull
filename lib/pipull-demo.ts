@@ -11,6 +11,7 @@ export type DemoAccount = {
 
 export const demoAccounts: DemoAccount[] = [
   { email: 'harvey@pipul.com', name: 'Harvey Specter', role: 'recruiter', phone: '+91 98765 43210' },
+  { email: 'louislitt@pipul.com', name: 'Louis Litt', role: 'recruiter', phone: '+91 98765 43212' },
   { email: 'mikeross@pipull.com', name: 'Mike Ross', role: 'job-seeker', phone: '+91 98765 43211' },
 ]
 
